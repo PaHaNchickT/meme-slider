@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap')
+    
 body
     margin: 0
+    font-family: 'Nunito', sans-serif
 
 header
     height: 100px
@@ -10,6 +13,7 @@ header
     background-position: center
 
 footer
+    box-shadow: 0px 0px 20px 15px black
     height: 50px
     background-color: black
     display: flex
@@ -34,6 +38,8 @@ footer
     background-color: gray
     width: 600px
     height: 500px
+    border-radius: 10px
+    box-shadow: 0px 0px 35px 0px black
 
 .images
     width: 500px
@@ -41,19 +47,52 @@ footer
     background-color: black
     overflow: hidden
     margin: 50px auto 0
+    border-radius: 7px
+    border: 5px solid white
 
 .hood
     margin: 30px 50px 0
     display: flex
     justify-content: space-between
+    p
+        color: white
+        margin: 0
+        font-weight: bolder
 
 .img
     width: 500px
     height: 354px
-
-.img1
     position: relative
+    background-size: 100%
+    
+.img1
+    left: 0
+    background-image: url('../assets/01.jpg')
+
+.img2
+    top: -354px
     left: 500px
 
-p
-    margin: 0
+.img3
+    top: -708px
+    left: 1000px
+
+.img4
+    top: -1062px
+    left: 1500px
+
+.control
+    width: 150px
+    display: flex
+    justify-content: flex-end
+
+.btn
+    width: 15px
+    height: 15px
+    margin: 5px
+    background-color: white
+    border-radius: 50%
+    border: 3px solid white
+
+.btn1
+    background-color: gray

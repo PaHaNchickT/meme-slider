@@ -40,20 +40,35 @@ const img3 = document.querySelector('.img3')
 const img4 = document.querySelector('.img4')
 const control = document.querySelector('.control')
 const text = document.querySelector('p')
+let imgHeight
+
+imgHeightCounter()
+
+function imgHeightCounter() {
+    if (window.screen.width < 650) {
+        imgHeight = 156
+    } else {
+        imgHeight = 354
+    }
+}
+
+window.addEventListener('resize', function() {
+    imgHeightCounter();
+    slides(page);
+})
 
 document.querySelectorAll('.img').forEach((e, i) => {
-    e.style.backgroundImage = `url('./assets/0${i+1}.jpg')`
+    e.style.backgroundImage = `url('./assets/0${i + 1}.jpg')`
 })
 
 function activePage(num) {
     document.querySelectorAll('.btn').forEach((e, i) => {
         e.classList.remove('active')
-        if (i+1 === +num) {
+        if (i + 1 === +num) {
             e.classList.add('active')
-            console.log()
             text.style.opacity = 0
-            setTimeout(function() {
-                text.innerHTML = `${memes[+num-1]['title']}`
+            setTimeout(function () {
+                text.innerHTML = `${memes[+num - 1]['title']}`
                 text.style.opacity = 1
             }, 300)
         }
@@ -65,7 +80,11 @@ function activePage(num) {
 slides('1')
 
 function slides(num) {
-    switch(num) {
+    img1.style.top = '0'
+    img2.style.top = `-${imgHeight}px`
+    img3.style.top = `-${imgHeight*2}px`
+    img4.style.top = `-${imgHeight*3}px`
+    switch (num) {
         case '1':
             img1.style.left = '0'
             img2.style.left = '500px'
@@ -104,7 +123,7 @@ function slides(num) {
             break
         case '4':
             img1.style.left = '-1500px'
-            img2.style.left = '-100px'
+            img2.style.left = '-1000px'
             img3.style.left = '-500px'
             img4.style.left = '0'
             if (page === '4') {
@@ -117,8 +136,7 @@ function slides(num) {
     }
 }
 
-control.addEventListener('click', function(event) {
-    console.log(event.target.getBoundingClientRect())
+control.addEventListener('click', function (event) {
     if (event.target.className.slice(0, 3) === 'btn') {
         slides(event.target.className.slice(7, 8))
     }

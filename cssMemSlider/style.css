@@ -172,25 +172,9 @@ footer a:hover {
 
 @media screen and (max-width: 650px) {
   .img {
-    width: 100%;
+    width: 220px;
     height: 100%;
   }
-}
-
-.img1 {
-  left: 0;
-}
-
-.img2 {
-  top: -354px;
-}
-
-.img3 {
-  top: -708px;
-}
-
-.img4 {
-  top: -1062px;
 }
 
 .control {

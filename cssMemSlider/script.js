@@ -46,7 +46,14 @@ document.querySelectorAll('.img').forEach((e, i) => {
 })
 
 function activePage(num) {
-    document.querySelectorAll('.btn')
+    document.querySelectorAll('.btn').forEach((e, i) => {
+        e.classList.remove('active')
+        if (i+1 === +num) {
+            e.classList.add('active')
+        }
+        // console.log(e.className.slice(9, 15))
+        // console.log(e, num)
+    })
 }
 
 function slides(num) {
@@ -56,24 +63,28 @@ function slides(num) {
             img2.style.left = '500px'
             img3.style.left = '1000px'
             img4.style.left = '1500px'
+            activePage('1')
             break
         case '2':
             img1.style.left = '-500px'
             img2.style.left = '0'
             img3.style.left = '500px'
             img4.style.left = '1000px'
+            activePage('2')
             break
         case '3':
             img1.style.left = '-1000px'
             img2.style.left = '-500px'
             img3.style.left = '0'
             img4.style.left = '500px'
+            activePage('3')
             break
         case '4':
             img1.style.left = '-1500px'
             img2.style.left = '-100px'
             img3.style.left = '-500px'
             img4.style.left = '0'
+            activePage('4')
             break
     }
 }

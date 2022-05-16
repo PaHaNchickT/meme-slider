@@ -71,34 +71,55 @@ function slides(num) {
             img2.style.left = '500px'
             img3.style.left = '1000px'
             img4.style.left = '1500px'
-            activePage('1')
+            if (page === '1') {
+                break
+            } else {
+                activePage('1')
+            }
+            page = '1'
             break
         case '2':
             img1.style.left = '-500px'
             img2.style.left = '0'
             img3.style.left = '500px'
             img4.style.left = '1000px'
-            activePage('2')
+            if (page === '2') {
+                break
+            } else {
+                activePage('2')
+            }
+            page = '2'
             break
         case '3':
             img1.style.left = '-1000px'
             img2.style.left = '-500px'
             img3.style.left = '0'
             img4.style.left = '500px'
-            activePage('3')
+            if (page === '3') {
+                break
+            } else {
+                activePage('3')
+            }
+            page = '3'
             break
         case '4':
             img1.style.left = '-1500px'
             img2.style.left = '-100px'
             img3.style.left = '-500px'
             img4.style.left = '0'
-            activePage('4')
+            if (page === '4') {
+                break
+            } else {
+                activePage('4')
+            }
+            page = '4'
             break
     }
 }
 
 control.addEventListener('click', function(event) {
     if (event.target.className.slice(0, 3) === 'btn') {
+        console.log(event.target)
         slides(event.target.className.slice(7, 8))
     }
 })

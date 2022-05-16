@@ -90,21 +90,27 @@ footer
     justify-content: flex-end
 
 .btn
-    width: 15px
-    height: 15px
-    margin: 5px
-    background-color: white
-    border-radius: 50%
-    border: 3px solid white
+    width: 30px
+    height: 35px
+    // width: 15px
+    // height: 15px
+    // margin: 5px
+    // background-color: white
+    // border-radius: 50%
+    // border: 3px solid white
+    background-image: url('./assets/btn_default.png')
+    background-size: 100%
+    background-repeat: no-repeat
     transition: 0.3s    
     &:hover
-        background-color: black
+        background-image: url('./assets/btn_hover.png')
         border-color: white
         cursor: pointer
 
 .active
-    background-color: #9a9a9a
+    background-image: url('./assets/btn_active.png')
+    background-size: 100%
+    background-repeat: no-repeat
     &:hover
-        background-color: #9a9a9a
-        border-color: white
+        background-image: url('./assets/btn_active.png')
         cursor: auto

@@ -118,8 +118,8 @@ function slides(num) {
 }
 
 control.addEventListener('click', function(event) {
+    console.log(event.target.getBoundingClientRect())
     if (event.target.className.slice(0, 3) === 'btn') {
-        console.log(event.target)
         slides(event.target.className.slice(7, 8))
     }
 })

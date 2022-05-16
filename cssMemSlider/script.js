@@ -32,5 +32,54 @@ body.insertAdjacentHTML('beforeend', `<footer>
 
 //////////core functions//////////
 
-let page = 1
+let page = '1'
 
+const img1 = document.querySelector('.img1')
+const img2 = document.querySelector('.img2')
+const img3 = document.querySelector('.img3')
+const img4 = document.querySelector('.img4')
+const control = document.querySelector('.control')
+const text = document.querySelector('p')
+
+document.querySelectorAll('.img').forEach((e, i) => {
+    e.style.backgroundImage = `url('./assets/0${i+1}.jpg')`
+})
+
+function activePage(num) {
+    document.querySelectorAll('.btn')
+}
+
+function slides(num) {
+    switch(num) {
+        case '1':
+            img1.style.left = '0'
+            img2.style.left = '500px'
+            img3.style.left = '1000px'
+            img4.style.left = '1500px'
+            break
+        case '2':
+            img1.style.left = '-500px'
+            img2.style.left = '0'
+            img3.style.left = '500px'
+            img4.style.left = '1000px'
+            break
+        case '3':
+            img1.style.left = '-1000px'
+            img2.style.left = '-500px'
+            img3.style.left = '0'
+            img4.style.left = '500px'
+            break
+        case '4':
+            img1.style.left = '-1500px'
+            img2.style.left = '-100px'
+            img3.style.left = '-500px'
+            img4.style.left = '0'
+            break
+    }
+}
+
+control.addEventListener('click', function(event) {
+    if (event.target.className.slice(0, 3) === 'btn') {
+        slides(event.target.className.slice(7, 8))
+    }
+})

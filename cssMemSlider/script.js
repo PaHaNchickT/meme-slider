@@ -50,11 +50,19 @@ function activePage(num) {
         e.classList.remove('active')
         if (i+1 === +num) {
             e.classList.add('active')
+            console.log()
+            text.style.opacity = 0
+            setTimeout(function() {
+                text.innerHTML = `${memes[+num-1]['title']}`
+                text.style.opacity = 1
+            }, 300)
         }
         // console.log(e.className.slice(9, 15))
         // console.log(e, num)
     })
 }
+
+slides('1')
 
 function slides(num) {
     switch(num) {

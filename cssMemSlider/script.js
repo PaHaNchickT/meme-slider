@@ -25,9 +25,9 @@ main.insertAdjacentHTML('beforeend', `<div class="container">
 </div>
 </div>`)
 body.insertAdjacentHTML('beforeend', `<footer>
-<a href="https://github.com/pahanchickt">GitHub</a>
+<a href="https://github.com/pahanchickt" target='blank'>GitHub</a>
 <p>Meme Slider © 2022</p>
-<a href="https://rs.school/js-en/">RolingScopes</a>
+<a href="https://rs.school/js-en/" target='blank'>RolingScopes</a>
 </footer>`)
 
 //////////core functions//////////
